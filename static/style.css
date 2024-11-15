@@ -126,6 +126,9 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 
 }
 .recharge__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 100px auto;
     width: 300px;
     height: 200px;
@@ -134,15 +137,120 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     border-radius: 30px ;
     padding: 20px;
 }
+.form{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.input__group{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+.recharge__label{
+    font-weight: 500;
+    font-size: 10px;
+    color: #141414;
+}
 .recharge__input{
-
+    padding-left: 10px;
+    margin-bottom: 6px;
+    background: #e3e3e3;
+    border: 1px solid #141414;
+    border-radius: 100px;
+    width: 260px;
+    height: 26px;
 }
 .recharge__btn{
-
+    margin: 0 auto;
+    background: rgba(20, 20, 20, 0.5);
+    border: 3px solid #FECA62;
+    border-radius: 10px;
+    width: 140px;
+    height: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fbfbfb;
+    margin-top: auto;
 }
-
-
-
-
+/*----------Transaction----------*/
+.transaction__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 100px auto;
+    width: 300px;
+    height: 300px;
+    background-color: #FBFBFB;
+    border: 2px solid #141414;
+    border-radius: 30px ;
+    padding: 20px;
+}
+.transaction__label{
+    font-weight: 500;
+    font-size: 10px;
+    color: #141414;
+}
+.transaction__input{
+    padding-left: 10px;
+    margin-bottom: 6px;
+    background: #e3e3e3;
+    border: 1px solid #141414;
+    border-radius: 100px;
+    width: 260px;
+    height: 26px;
+}
+.transaction__btn{
+    margin: 0 auto;
+    background: rgba(20, 20, 20, 0.5);
+    border: 3px solid #FECA62;
+    border-radius: 10px;
+    width: 140px;
+    height: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fbfbfb;
+    margin-top: auto;
+}
+/*----------Remove----------*/
+.remove__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 100px auto;
+    width: 300px;
+    height: 240px;
+    background-color: #FBFBFB;
+    border: 2px solid #141414;
+    border-radius: 30px ;
+    padding: 20px;
+}
+.remove__label{
+    font-weight: 500;
+    font-size: 10px;
+    color: #141414;
+}
+.remove__input{
+    padding-left: 10px;
+    margin-bottom: 6px;
+    background: #e3e3e3;
+    border: 1px solid #141414;
+    border-radius: 100px;
+    width: 260px;
+    height: 26px;
+}
+.remove__btn{
+    margin: 0 auto;
+    background: rgba(20, 20, 20, 0.5);
+    border: 3px solid #FECA62;
+    border-radius: 10px;
+    width: 140px;
+    height: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fbfbfb;
+    margin-top: auto;
+}
 
 
