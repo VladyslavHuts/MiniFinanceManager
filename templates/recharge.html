@@ -14,17 +14,41 @@
             <section class="recharge">
                 <div class="container">
                     <div class="recharge__form">
-                        <form class="form" action="#">
+                        <form class="form" action="#" id="rechargeForm">
                             <div class="input__group">
                                 <label class="recharge__label">Wpisz kwotę, którą chcesz doładować.</label>
-                                <input class="recharge__input" type="number">
+                                <input class="recharge__input" type="number" id="rechargeAmount" required>
+                                <span class="error-message" id="errorMessage"></span>
                             </div>
-                            <button class="recharge__btn">Doładuj</button>
+                            <button type="submit" class="recharge__btn">Doładuj</button>
                         </form>
                     </div>
                 </div>
             </section>
         </main>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("rechargeForm");
+            const amountInput = document.getElementById("rechargeAmount");
+            const errorMessage = document.getElementById("errorMessage");
+
+            form.addEventListener("submit", function(event) {
+                const amount = parseFloat(amountInput.value);
+
+                if (isNaN(amount) || amount <= 0) {
+                    event.preventDefault();
+                    errorMessage.textContent = "Proszę wprowadzić prawidłową kwotę większą niż 0.";
+                    errorMessage.style.display = "block";
+                } else {
+                    errorMessage.style.display = "none";
+
+                    event.preventDefault();
+                    alert("Doładowanie zakończone sukcesem! Przekierowanie na stronę główną...");
+                    window.location.href = "index.html";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
