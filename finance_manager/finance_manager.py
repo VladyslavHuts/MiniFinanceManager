@@ -1,6 +1,5 @@
 from datetime import datetime
 
-
 class Transaction:
     def __init__(self, amount, category, transaction_type, date=None):
         if transaction_type not in ["income", "expense"]:
@@ -27,12 +26,10 @@ class FinanceManager:
         self.file_name = file_name
 
     def add_transaction(self, transaction):
-        """Додає транзакцію до файлу."""
         with open(self.file_name, "a") as file:
             file.write(transaction.to_file_string() + "\n")
 
     def view_transactions(self):
-        """Зчитує всі транзакції з файлу та повертає список об'єктів Transaction."""
         transactions = []
         with open(self.file_name, "r") as file:
             for line in file:
@@ -41,7 +38,6 @@ class FinanceManager:
         return transactions
 
     def delete_transaction(self, date, category):
-        """Видаляє транзакцію за датою та категорією."""
         transactions = self.view_transactions()
         transactions = [t for t in transactions if not (t.date == date and t.category == category)]
 
@@ -50,7 +46,6 @@ class FinanceManager:
                 file.write(transaction.to_file_string() + "\n")
 
     def calculate_balance(self):
-        """Розраховує баланс на основі доходів і витрат."""
         income, expense = 0, 0
         transactions = self.view_transactions()
         for transaction in transactions:

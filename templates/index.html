@@ -14,31 +14,36 @@
             <section class="overview">
                 <div class="container">
                     <div class="overview__balance">
-                        <p class="overview__amount">120 000 <span>PLN</span></p>
+                        <p class="overview__amount">{{ "{:,.2f}".format(balance).replace(",", " ").replace(".", ",") }}
+                            <span>PLN</span></p>
                         <h3 class="overview__title">Saldo konta</h3>
                     </div>
                     <div class="overview__manager">
                         <ul class="overview__list">
                             <li class="overview__item">
-                                <a href="../templates/recharge.html">
-                                    <img src="../static/images/Group1.svg" alt="#" class="overview__icon">
+                                <a href="{{ url_for('recharge') }}">
+                                    <img src="{{ url_for('static', filename='images/Group1.svg') }}" alt="#"
+                                         class="overview__icon">
                                     <p class="overview__text">Doładuj konto</p>
                                 </a>
                             </li>
                             <li class="overview__item">
-                                <a href="../templates/transaction.html">
-                                    <img src="../static/images/Group2.svg" alt="#" class="overview__icon">
+                                <a href="{{ url_for('transaction') }}">
+                                    <img src="{{ url_for('static', filename='images/Group2.svg') }}" alt="#"
+                                         class="overview__icon">
                                     <p class="overview__text">Dodaj transakcję</p>
                                 </a>
                             </li>
                             <li class="overview__item">
-                                <a href="../templates/remove.html">
-                                    <img src="../static/images/Group3.svg" alt="#" class="overview__icon">
+                                <a href="{{ url_for('remove') }}">
+                                    <img src="{{ url_for('static', filename='images/Group3.svg') }}" alt="#"
+                                         class="overview__icon">
                                     <p class="overview__text">Usuń transakcję</p>
                                 </a>
                             </li>
                         </ul>
                     </div>
+
                 </div>
             </section>
             <section class="transactions">
@@ -60,7 +65,7 @@
                                 <p class="transactions__type">expense</p>
                             </span>
                             <span class="transactions__span">
-                                <p class="transactions__suma">-1000</p>
+                                <p class="transactions__suma">+1000</p>
                                 <p class="transactions__date">2024.11.14</p>
                             </span>
                         </li>
@@ -70,7 +75,7 @@
                                 <p class="transactions__type">expens</p>
                             </span>
                             <span class="transactions__span">
-                                <p class="transactions__suma">-1000</p>
+                                <p class="transactions__suma">+1000</p>
                                 <p class="transactions__date">2024.11.14</p>
                             </span>
                         </li>
@@ -89,6 +94,5 @@
             </section>
         </main>
     </div>
-<script src="../static/script.js"></script>
 </body>
 </html>

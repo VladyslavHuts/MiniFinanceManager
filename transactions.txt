@@ -1,1 +1,9 @@
-2000.0,Продукти,expense,2024-11-14
+1790.0
+expense,Rent,500,2024-11-16
+expense,Ananas,300000.0,2024-11-15
+income,Ananas,20000.0,2024-11-15
+expense,Rent,500,2024-11-16
+expense,Ananas,300000.0,2024-11-15
+income,Ananas,20000.0,2024-11-15
+expense,Ananas,100.0,2024-11-23
+expense,Food,30000.0,2024-11-15
