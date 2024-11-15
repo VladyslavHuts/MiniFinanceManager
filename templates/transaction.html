@@ -30,8 +30,8 @@
                             <div class="input__group">
                                 <label class="transaction__label">Тип транзакції.</label>
                                 <select name="transaction_type" required>
-                                    <option value="income">Доходи</option>
-                                    <option value="expense">Витрати</option>
+                                    <option value="income">Income</option>
+                                    <option value="expense">Expense</option>
                                 </select>
                             </div>
                             <button type="submit" class="transaction__btn">Dodaj</button>
@@ -54,7 +54,6 @@
             transactionForm.addEventListener("submit", function (event) {
                 let isValid = true;
 
-                // Перевірка поля "Nazwa"
                 if (nameInput.value.trim() === "") {
                     nameError.textContent = "Proszę wprowadzić nazwę.";
                     nameError.style.display = "block";
@@ -63,7 +62,6 @@
                     nameError.style.display = "none";
                 }
 
-                // Перевірка поля "Data"
                 if (dateInput.value === "") {
                     dateError.textContent = "Proszę wybrać datę.";
                     dateError.style.display = "block";
@@ -72,7 +70,6 @@
                     dateError.style.display = "none";
                 }
 
-                // Перевірка поля "Suma"
                 const amount = parseFloat(amountInput.value);
                 if (isNaN(amount) || amount <= 0) {
                     amountError.textContent = "Proszę wprowadzić poprawną sumę większą ніж 0.";
@@ -82,11 +79,9 @@
                     amountError.style.display = "none";
                 }
 
-                // Якщо є помилки, зупиняємо відправку форми
                 if (!isValid) {
                     event.preventDefault();
                 } else {
-                    // Якщо форма валідна, відправляємо і повертаємося на головну сторінку
                     event.preventDefault();
                     alert("Form submitted successfully! Redirecting to the main page...");
                     window.location.href = "/";
