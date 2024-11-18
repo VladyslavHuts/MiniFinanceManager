@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 class Transaction:
     def __init__(self, amount, category, transaction_type, date=None):
         if transaction_type not in ["income", "expense"]:

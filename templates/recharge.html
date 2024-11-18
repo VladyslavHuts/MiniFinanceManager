@@ -26,28 +26,6 @@
             </section>
         </main>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const form = document.getElementById("rechargeForm");
-            const amountInput = document.getElementById("rechargeAmount");
-            const errorMessage = document.getElementById("errorMessage");
-
-            form.addEventListener("submit", function (event) {
-                const amount = parseFloat(amountInput.value);
-
-                if (isNaN(amount) || amount <= 0) {
-                    event.preventDefault();
-                    errorMessage.textContent = "Proszę wprowadzić prawidłową kwotę większą niż 0.";
-                    errorMessage.style.display = "block";
-                } else {
-                    errorMessage.style.display = "none";
-
-                    event.preventDefault();
-                    alert("Doładowanie zakończone sukcesem! Przekierowanie na stronę główną...");
-                    window.location.href = "/";
-                }
-            });
-        });
-    </script>
+    <script src="../static/recharge.js"></script>
 </body>
 </html>
